@@ -1,0 +1,26 @@
+
+  
+  <!-- Texto explicativo sobre el mapa -->
+  <div class="info-mapa">
+    <h2>Mapa de los Árboles del CUTonala</h2>
+    <p>
+      Este mapa interactivo muestra la ubicación de los árboles dentro del Centro Universitario de Tonalá (CUT). Los árboles están marcados con puntos en el mapa, y al hacer clic en cada marcador, podrás ver información detallada sobre cada uno, como su tipo, ubicación y la cantidad de oxígeno que producen. Este es un proyecto para promover la conciencia ambiental en nuestra comunidad universitaria.
+    </p>
+    <p>
+      Explora el mapa y aprende más sobre los árboles que contribuyen a nuestro entorno y bienestar.
+    </p>
+  </div>
+  <!-- Mensaje de Cargando -->
+  <div *ngIf="isLoading" class="loading-message">
+    Cargando mapa...
+  </div>
+  
+  <!-- Contenedor para el mapa -->
+  <div id="mapa"></div>
+  
+  <!-- Popup que muestra la información del árbol -->
+  <div id="popup" class="ol-popup">
+    <div id="popup-content"></div>
+  </div>
+  
+  

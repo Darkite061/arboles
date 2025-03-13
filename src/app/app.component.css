@@ -1,0 +1,14 @@
+main{
+    line-height: 1.4em;
+    font-family: "Open Sans",'lucida grande',tahoma,verdana,arial,sans-serif;
+    color: #444444;
+    direction: ltr;
+    font-size: 13px;
+    padding: 0;
+    text-align: left;
+    unicode-bidi: embed;
+    padding-bottom: 0 !important;
+    margin: 0 2.5% 0 !important;
+    border-bottom: 1px solid #eee !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+  }
