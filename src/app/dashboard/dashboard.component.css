@@ -1,1 +1,78 @@
-
+/* Estilo general de la página de inicio */
+.inicio-container {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Imagen destacada */
+  .imagen-destacada img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Sección de bienvenida */
+  .bienvenida {
+    margin-top: 20px;
+  }
+  
+  .bienvenida h1 {
+    color: #2E7D32; /* Verde oscuro */
+    font-size: 28px;
+  }
+  
+  .bienvenida p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Botón para ir al mapa */
+  .boton-mapa {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  
+  .boton-mapa:hover {
+    background-color: #388E3C;
+    transform: scale(1.05);
+  }
+  
+  /* Sección de beneficios */
+  .beneficios {
+    margin-top: 40px;
+  }
+  
+  .beneficios h2 {
+    color: #1B5E20;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para cada beneficio */
+  .beneficio-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .beneficio-item img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .beneficio-item p {
+    font-size: 18px;
+    color: #444;
+  }
+  

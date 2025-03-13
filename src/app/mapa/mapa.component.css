@@ -33,11 +33,73 @@
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    display: none;
+    width: 280px;
+    /* display: none; */
     z-index: 100;
+    /* height: 10vh; */
   }
   
   #popup-content {
     padding: 10px;
   }
+
+/* Estilo del botón de cerrar */
+.popup-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  font-size: 16px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.popup-close:hover {
+  background: darkred;
+}
+
+
+
+
+/* Hacer los botones más grandes y redondos */
+::ng-deep .ol-control {
+  position: absolute !important; /* Asegura que los controles se posicionen bien */
+}
+
+/* Personalizar botones */
+::ng-deep .ol-control button {
+  width: 50px;   /* Ajusta el tamaño */
+  height: 50px;
+  border-radius: 50%; /* Hace los botones redondos */
+  font-size: 22px;  /* Agranda el icono */
+  background-color: #4CAF50; /* Color de fondo verde */
+  color: white; /* Color del icono */
+  border: none;
+  transition: 0.3s ease-in-out;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Cambia el color cuando pasas el mouse */
+::ng-deep .ol-control button:hover {
+  background-color: #45a049;
+  transform: scale(1.1); /* Efecto de agrandamiento */
+}
+
+/* 📍 Ubicar el ZOOM en la ESQUINA SUPERIOR IZQUIERDA */
+::ng-deep .ol-zoom {
+  top: 10px; /* Mantiene en la parte superior */
+  left: 10px;  /* Pegado al lado izquierdo */
+  position: absolute !important; /* Asegurar que se posicione correctamente */
+}
+
+/* 🔳 Ubicar el PANTALLA COMPLETA en la ESQUINA SUPERIOR DERECHA */
+::ng-deep .ol-full-screen {
+  top: 10px;   /* Mantiene en la parte superior */
+  right: 10px; /* Pegado al lado derecho */
+  left: auto;  /* Resetea el left */
+  position: absolute !important; /* Asegurar que se posicione correctamente */
+}

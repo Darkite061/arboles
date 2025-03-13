@@ -13,6 +13,8 @@ import { Vector as VectorSource } from 'ol/source';
 import Select from 'ol/interaction/Select';
 import { click } from 'ol/events/condition';
 import { CommonModule } from '@angular/common';
+import FullScreen from 'ol/control/FullScreen';
+import Zoom from 'ol/control/Zoom';
 
 @Component({
   selector: 'app-mapa',
@@ -60,7 +62,7 @@ export class MapaComponent implements OnInit {
       uso_ecologico: "Sombra, Hábitat para fauna",
       epoca_floracion: "Verano",
       anio_plantacion: 1990,
-      fotografia: "url-de-imagen-del-pino.jpg",
+      fotografia: "https://th.bing.com/th/id/OIP.btndntxMRlVzdrN1lUunfgHaEK?rs=1&pid=ImgDetMain",
       notas: "Árbol en declive debido a plagas."
     }
   ];
@@ -75,16 +77,25 @@ export class MapaComponent implements OnInit {
       layers: [
         new TileLayer({
           source: new OSM({
-            attributions: [] // Esto elimina la atribución de OpenStreetMap
+            attributions: [] // Elimina la atribución de OpenStreetMap
           })
         })
       ],
       view: new View({
         center: fromLonLat([-103.22740144442683, 20.566436345390372]),
         zoom: 17
-      })
+      }),
+      controls: [] // Inicialmente sin controles para agregar solo los necesarios
     });
-  
+
+    // Agregar control de zoom
+    const zoomControl = new Zoom();
+    this.mapa.addControl(zoomControl);
+
+    // Agregar el control de pantalla completa
+    const fullScreenControl = new FullScreen();
+    this.mapa.addControl(fullScreenControl);
+
     const vectorSource = new VectorSource();
     this.arboles.forEach(arbol => {
       const marker = new Feature({
@@ -94,7 +105,8 @@ export class MapaComponent implements OnInit {
   
       marker.setStyle(new Style({
         image: new Icon({
-          src: 'https://openlayers.org/en/v4.6.5/examples/data/icon.png',
+          // src: 'https://openlayers.org/en/v4.6.5/examples/data/icon.png',
+          src: 'assets/icons/icons8-tree-32 (1).png',
           scale: 0.9
         })
       }));
@@ -145,10 +157,39 @@ export class MapaComponent implements OnInit {
         }
       }
     });
+    // this.mapa.on('singleclick', (event: { pixel: any; }) => {
+    //   // Verificar si se hizo clic en un marcador
+    //   const feature = this.mapa.forEachFeatureAtPixel(event.pixel, (feature: any) => feature);
+      
+    //   if (!feature && this.popup) {
+    //     this.popup.setPosition(undefined); // Ocultar popup
+    //     console.log("Popup cerrado");
+    //   }
+    // });
+    // Obtener el botón de cerrar
+    const closeButton = document.getElementById('popup-close');
+
+    if (closeButton) {
+      closeButton.addEventListener('click', () => {
+        if (this.popup) {
+          this.popup.setPosition(undefined); // Oculta el popup
+          console.log("Popup cerrado");
+        }
+      });
+    }
+
   
-    this.mapa.on('load', () => {
+
+    this.mapa.once('rendercomplete', () => {
       this.isLoading = false;
+      console.log("Mapa cargado");
     });
-  }
+    
+  // this.mapa.getView().on('change:resolution', () => {
+  //   this.isLoading = false;
+  //   console.log("Mapa cargado");
+  // });
+  
+}
   
 }

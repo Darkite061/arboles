@@ -1,0 +1,110 @@
+/* Contenedor principal */
+.contenedor-arboles {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Grid de árboles */
+  .arboles-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Tarjetas de los árboles */
+  .arbol-card {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .arbol-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Botones */
+  .botones {
+    margin-top: 10px;
+  }
+  
+  .ver-mas, .ver-mapa {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .ver-mas:hover, .ver-mapa:hover {
+    background-color: #388E3C;
+  }
+  
+
+
+
+
+
+
+  /* Estilos generales del contenedor */
+.contenedor-arboles {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilos para la tabla */
+  .tabla-arboles {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+  }
+  
+  .tabla-arboles th, .tabla-arboles td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .tabla-arboles th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .tabla-arboles tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .tabla-arboles td img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  /* Botones en la tabla */
+  .ver-mas, .ver-mapa {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .ver-mas:hover, .ver-mapa:hover {
+    background-color: #388E3C;
+  }
+  

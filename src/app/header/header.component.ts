@@ -16,50 +16,43 @@ export class HeaderComponent {
   ngOnInit() {
     this.items = [
         {
-            label: 'Home',
-            icon: 'pi pi-home'
+            label: 'Inicio',
+            icon: 'pi pi-home',
+            routerLink: ['/dashboard']  // Ruta a dashboard (Inicio)
         },
         {
-            label: 'Features',
-            icon: 'pi pi-star'
-        },
-        {
-            label: 'Projects',
+            label: 'Árboles',
             icon: 'pi pi-search',
             items: [
                 {
-                    label: 'Components',
-                    icon: 'pi pi-bolt'
+                    label: 'Listado',
+                    icon: 'pi pi-bolt',
+                    routerLink: ['/lista']  // Ruta a la lista de árboles
                 },
                 {
-                    label: 'Blocks',
-                    icon: 'pi pi-server'
+                    label: 'Importancia',
+                    icon: 'pi pi-server',
+                    routerLink: ['/importancia']  // Ruta a la importancia de los árboles
                 },
                 {
-                    label: 'UI Kit',
-                    icon: 'pi pi-pencil'
-                },
-                {
-                    label: 'Templates',
-                    icon: 'pi pi-palette',
-                    items: [
-                        {
-                            label: 'Apollo',
-                            icon: 'pi pi-palette'
-                        },
-                        {
-                            label: 'Ultima',
-                            icon: 'pi pi-palette'
-                        }
-                    ]
+                    label: 'Mapa',
+                    icon: 'pi pi-star',
+                    routerLink: ['/mapa']  // Ruta al mapa
                 }
             ]
         },
         {
-            label: 'Contact',
-            icon: 'pi pi-envelope'
+            label: 'Noticias',
+            icon: 'pi pi-star',
+            routerLink: ['/noticias']  // Ruta al mapa
+        },
+        {
+            label: 'Contacto',
+            icon: 'pi pi-envelope',
+            routerLink: ['/contacto']  // Ruta a contactos
         }
-    ]
+    ];
 }
+
 
 }

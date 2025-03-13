@@ -1,0 +1,56 @@
+<div class="contenedor-arboles">
+    <h2>🌳 Listado de Árboles</h2>
+  
+    <div class="arboles-grid">
+      <div class="arbol-card" *ngFor="let arbol of arboles">
+        <img [src]="arbol.fotografia" [alt]="arbol.nombre_comun">
+        <h3>{{ arbol.nombre_comun }}</h3>
+        <p><strong>Nombre Científico:</strong> {{ arbol.nombre_cientifico }}</p>
+        <p><strong>Ubicación:</strong> {{ arbol.area }}</p>
+        <p><strong>Altura:</strong> {{ arbol.altura }} metros</p>
+        <p><strong>Estado:</strong> {{ arbol.estado }}</p>
+  
+        <div class="botones">
+          <button class="ver-mas">Ver Más</button>
+          <button class="ver-mapa">📍 Ver en Mapa</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+  <div class="contenedor-arboles">
+    <h2>🌳 Listado de Árboles</h2>
+  
+    <table class="tabla-arboles">
+      <thead>
+        <tr>
+          <th>Fotografía</th>
+          <th>Nombre Común</th>
+          <th>Nombre Científico</th>
+          <th>Ubicación</th>
+          <th>Altura (m)</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let arbol of arboles">
+          <td><img [src]="arbol.fotografia" [alt]="arbol.nombre_comun" class="imagen-arbol"></td>
+          <td>{{ arbol.nombre_comun }}</td>
+          <td>{{ arbol.nombre_cientifico }}</td>
+          <td>{{ arbol.area }}</td>
+          <td>{{ arbol.altura }} metros</td>
+          <td>{{ arbol.estado }}</td>
+          <td>
+            <button class="ver-mas">Ver Más</button>
+            <button class="ver-mapa">📍 Ver en Mapa</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

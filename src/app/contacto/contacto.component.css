@@ -1,0 +1,80 @@
+/* Contenedor principal */
+.contacto-container {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #4CAF50;
+  }
+  
+  h2 {
+    font-size: 1.8em;
+    margin: 20px 0;
+  }
+  
+  /* Estilos para el formulario */
+  .formulario {
+    background-color: #f4f4f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    width: 70%;
+    max-width: 600px;
+  }
+  
+  .formulario .campo {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .formulario label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .formulario input,
+  .formulario textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .formulario textarea {
+    resize: vertical;
+    height: 150px;
+  }
+  
+  .btn-enviar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-enviar:hover {
+    background-color: #45a049;
+  }
+  
+  /* Detalles de contacto */
+  .detalles-contacto {
+    margin-top: 40px;
+    font-size: 1.2em;
+  }
+  
+  .detalles-contacto p {
+    margin: 5px 0;
+  }
+  

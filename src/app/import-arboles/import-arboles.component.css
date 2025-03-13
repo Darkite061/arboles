@@ -1,0 +1,73 @@
+/* Contenedor principal */
+.importancia-container {
+    text-align: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #4CAF50;
+  }
+  
+  /* Estilo para el contenido del texto */
+  .contenido {
+    margin: 20px 0;
+    line-height: 1.6;
+  }
+  
+  /* Beneficios listados */
+  .beneficios-lista {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .beneficios-lista li {
+    margin: 10px 0;
+    font-size: 1.2em;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .beneficios-lista li::before {
+    content: "🌳";
+    position: absolute;
+    left: 0;
+    font-size: 1.5em;
+  }
+  
+  /* Llamada a la acción */
+  .llamada-a-accion {
+    background-color: #4CAF50;
+    padding: 20px;
+    color: white;
+    border-radius: 8px;
+    margin-top: 40px;
+  }
+  
+  .llamada-a-accion h3 {
+    font-size: 1.8em;
+  }
+  
+  .llamada-a-accion p {
+    font-size: 1.2em;
+  }
+  
+  .btn-accion {
+    padding: 10px 20px;
+    background-color: #388E3C;
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-accion:hover {
+    background-color: #2c6e28;
+  }
+  
