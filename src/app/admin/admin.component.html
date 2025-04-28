@@ -1,0 +1,163 @@
+<div id="mainDashboardContent">
+  <!-- <p-menubar [model]="items"></p-menubar> -->
+
+  <div class="card">
+    <nav>
+      <button (click)="changeSection('arboles')">Arboles</button>
+      <button (click)="changeSection('users')">Usuarios</button>
+        <button (click)="signOut()" style="background-color: #FFA500; color: black; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer;">Cerrar Sesión</button>
+    </nav>
+  </div>
+  <hr class="nav-separator">
+  
+
+<!------------------------------------ Sección para formularios de categorías ----------------------------->
+
+<div class="card" *ngIf="currentSection == 'arboles'">
+  <button class="styled-button" (click)="openModal()">Crear arbol</button>
+  <button class="styled-button" (click)="fileInput.click()">
+    Subir Excel de Árboles
+  </button>
+  
+  <input
+    type="file"
+    #fileInput
+    style="display: none"
+    (change)="onFileSelected($event)"
+    accept=".xlsx"
+  />  
+
+  
+    <p-table
+      [value]="arboles"
+      [paginator]="true"
+      [rows]="10"
+      [tableStyle]="{ 'width': '100%' }"
+      [rowsPerPageOptions]="[10, 20, 50]"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="id_arbol">
+            ID
+          </th>
+          <th pSortableColumn="nombre_comun">
+            Nombre Común
+          </th>
+          <th pSortableColumn="latitud">
+            Latitud
+          </th>
+          <th pSortableColumn="longitud">
+            Longitud
+          </th>
+          <th>Acciones</th>
+        </tr>
+      </ng-template>
+  
+      <ng-template pTemplate="body" let-arbol>
+        <tr>
+          <td>{{ arbol.id_arbol }}</td>
+          <td>{{ arbol.nombre_comun }}</td>
+          <td>{{ arbol.latitud }}</td>
+          <td>{{ arbol.longitud }}</td>
+          <td>
+            <button class="styled-button" (click)="editArbol(arbol)">Editar</button>
+            <button class="styled-button" (click)="eliminarArbol(arbol.id_arbol)">Eliminar</button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <div *ngIf="isModalOpen" class="modal">
+    <div class="modal-content modal-form-grid" >
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2>{{ selectedArbol ? 'Editar' : 'Crear' }} Árbol</h2>
+      
+      <form (ngSubmit)="selectedArbol ? updateArbol() : registrarArbol()" #ArbolForm="ngForm">
+  
+        <label>Nombre Común:</label>
+        <input type="text" [(ngModel)]="arbol.nombre_comun" name="nombre_comun" required>
+  
+        <label>Altura (m):</label>
+        <input type="number" [(ngModel)]="arbol.altura" name="altura" required>
+  
+        <label>Área:</label>
+        <input type="text" [(ngModel)]="arbol.area" name="area" required>
+  
+        <label>Nombre Científico:</label>
+        <input type="text" [(ngModel)]="arbol.nombre_cientifico" name="nombre_cientifico" required>
+  
+        <label>Diámetro del Tronco (cm):</label>
+        <input type="number" [(ngModel)]="arbol.diametro_tronco" name="diametro_tronco" required>
+  
+        <label>Edad Estimada (años):</label>
+        <input type="number" [(ngModel)]="arbol.edad_estimada" name="edad_estimada" required>
+  
+        <label>Estado:</label>
+        <input type="text" [(ngModel)]="arbol.estado" name="estado" required>
+  
+        <label>Tipo de Hoja:</label>
+        <input type="text" [(ngModel)]="arbol.tipo_hoja" name="tipo_hoja" required>
+  
+        <label>Especie:</label>
+        <input type="text" [(ngModel)]="arbol.especie" name="especie" required>
+  
+        <label>Uso Ecológico:</label>
+        <input type="text" [(ngModel)]="arbol.uso_ecologico" name="uso_ecologico" required>
+  
+        <label>Oxígeno Anual (kg):</label>
+        <input type="number" [(ngModel)]="arbol.oxigeno_anual" name="oxigeno_anual" required>
+  
+        <label>Época de Floración:</label>
+        <input type="text" [(ngModel)]="arbol.epoca_floracion" name="epoca_floracion" required>
+  
+        <label>Notas:</label>
+        <textarea [(ngModel)]="arbol.notas" name="notas"></textarea>
+  
+        <label>Latitud:</label>
+        <input type="number" [(ngModel)]="arbol.latitud" name="latitud" required step="any">
+  
+        <label>Longitud:</label>
+        <input type="number" [(ngModel)]="arbol.longitud" name="longitud" required step="any">
+  
+        <label>Imagen URL:</label>
+        <input type="text" [(ngModel)]="arbol.imagen_url" name="imagen_url">
+  
+        <button class="styled-button" type="submit" [disabled]="ArbolForm.invalid">
+          {{ selectedArbol ? 'Actualizar' : 'Registrar' }}
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="currentSection === 'users'">
+
+    <h1>Crear usuarios</h1>
+    <form (ngSubmit)="registrar()">
+      <div id="formDiv">
+        <input
+          type="text"
+          name="username"
+          id="username"
+          [(ngModel)]="newUser.username"
+          placeholder="Username"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          [(ngModel)]="newUser.password"
+          placeholder="Password"
+          required
+        />
+        <button class="styled-button" type="submit">Registrar</button>
+      </div>
+    </form>
+  </div>
+  
+</div>
+  
+
+  
+  

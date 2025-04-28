@@ -18,7 +18,7 @@ export class NoticiasComponent {
       fecha: "2025-03-10",
       descripcion: "Los árboles urbanos son fundamentales para mejorar la calidad de vida en las ciudades. Ayudan a reducir la contaminación, mejoran la salud mental y proporcionan sombra...",
       contenido: "Los árboles son fundamentales para el ecosistema urbano. Su presencia en las ciudades mejora la calidad del aire, reduce el estrés térmico y proporciona un entorno más saludable. Además, contribuyen al bienestar de los ciudadanos al ofrecer espacios verdes...",
-      imagen: "https://www.example.com/imagen1.jpg"
+      imagen: "https://th.bing.com/th/id/OIP.6teCUiOiiVORslaZ06d5zwHaEK?rs=1&pid=ImgDetMain"
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ export class NoticiasComponent {
       fecha: "2025-03-12",
       descripcion: "La reforestación es una de las estrategias más efectivas para luchar contra el cambio climático. Este artículo explora cómo las plantaciones de árboles ayudan a restaurar los ecosistemas...",
       contenido: "La reforestación es una técnica crucial para restaurar áreas degradadas. A través de esta práctica, podemos reforestar bosques destruidos, aumentar la biodiversidad, y capturar el carbono en la atmósfera, lo que ayuda a frenar el cambio climático...",
-      imagen: "https://www.example.com/imagen2.jpg"
+      imagen: "https://th.bing.com/th/id/OIP.dWHcSdro6fzFwmvaA93VWwHaD4?rs=1&pid=ImgDetMain"
     }
   ];
 

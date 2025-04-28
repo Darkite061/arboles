@@ -1,0 +1,236 @@
+/* Estilos Generales */
+body {
+    background-color: #f0f0f0; /* Fondo suave */
+    color: #333333; /* Color de texto oscuro */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Contenedor Principal */
+  #mainDashboardContent {
+    width: 85%;
+    max-width: 1600px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  /* Barra de Navegación */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  nav button {
+    background-color: #6b6b6b; /* Gris oscuro */
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav button:hover {
+    background-color: #969696; /* Gris medio */
+  }
+  
+  nav button:focus {
+    outline: none;
+  }
+  
+  /* Formularios y Botones */
+  #categoriesForm, #videosForm, #formDiv {
+    margin-bottom: 20px;
+  }
+  
+  .styled-button {
+    background-color: #FFA500; /* Gris medio */
+    color: #ffffff;
+    border: 2px solid #e38704;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px;
+  }
+  
+  .styled-button:hover {
+    background-color: #e38704; /* Gris claro */
+  }
+  
+  .styled-button:disabled {
+    background-color: #e6e6e6; /* Gris muy claro */
+    cursor: not-allowed;
+  }
+  
+  #formDiv input,
+  #formDiv select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin: 0 10px 10px 0;
+    font-size: 14px;
+    width: 250px;
+  }
+  
+  label {
+    font-weight: 500;
+    color: #6b6b6b; /* Gris oscuro */
+  }
+  
+ 
+  
+  
+  /* Modal */
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  /* .modal-content {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    width: 450px;
+    max-width: 90%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+  } */
+  .modal-content {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    width: 80%; /* Antes era 450px */
+    max-width: 1000px; /* Limita para pantallas grandes */
+    max-height: 90vh; /* Altura máxima del 90% de la pantalla */
+    overflow-y: auto; /* Scroll solo dentro del modal */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .modal-form-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .modal h2 {
+    color: #FFA500;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .close {
+    font-size: 25px;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .close:hover {
+    color: #FF2D37; /* Rojo para el hover */
+  }
+  
+  /* Animaciones para el modal */
+  .modal-content {
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Adaptabilidad para dispositivos móviles */
+  @media (max-width: 768px) {
+    #mainDashboardContent {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    nav button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    table th, table td {
+      padding: 8px;
+    }
+  
+    .styled-button {
+      width: 100%;
+      padding: 10px 0;
+    }
+  
+    #formDiv input,
+    #formDiv select {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* Formularios */
+  label {
+    display: block;
+    margin-top: 10px;
+    color: #6b6b6b;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+  }
+  
+  input:focus, select:focus {
+    border-color: #00a5dc;
+    outline: none;
+  }
+  
+  /* Mensajes de error */
+  .error {
+    color: #ff2d37;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  ::ng-deep .sign-out-button {
+    background-color: #FFA500;
+    color: black;
+    border-radius: 5px;
+  }
+  ::ng-deep .p-menubar{
+    border: none !important; 
+  }
+
+  /* Separador debajo del nav */
+.nav-separator {
+    border: none;
+    border-top: 2px solid #e0e0e0;
+    margin: 20px 0;
+  }
+  
+  
